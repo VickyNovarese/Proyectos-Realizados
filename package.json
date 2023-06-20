@@ -1,0 +1,17 @@
+{
+  "name": "repositorio-vicky-novarese",
+  "version": "1.0.0",
+  "description": "Proyectos-realizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "file": "Cypress run --spec"
+  },
+  "keywords": [
+    "Cypress",
+    "javascript"
+  ],
+  "devDependencies": {
+    "cypress": "^12.14.0"
+  }
+}
