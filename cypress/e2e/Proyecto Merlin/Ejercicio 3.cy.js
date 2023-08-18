@@ -30,7 +30,6 @@ import { mascotasApi } from '../../support/Page/mascotasApi.js';
         expect(soldPetNames).not.be.empty;
       })
     })
-
     it('Debería identificar cuantas mascotas se llaman igual.', () => {
       pets.contarmascotas();
     });
