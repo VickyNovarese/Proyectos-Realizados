@@ -1,11 +1,15 @@
-import {mascotasApi} from './mascotasApi'
-
-
 class Pets {
-  
+  createUserapi(userData) {
+    return cy.api({
+      method: 'POST',
+      url: 'https://petstore.swagger.io/v2/user',
+      body: userData
+    });
+  }
+
   createUser(userData) {
     
-      mascotasApi.createUser(userData)
+      this.createUserapi(userData)      
       .then(response => {
       this.createdUser = response.body;
             expect(response.status).to.equal(200);
@@ -13,23 +17,30 @@ class Pets {
             
       });
   }
+  getUserByUsername(username) {
+    return cy.api({
+      method: 'GET',
+      url: `https://petstore.swagger.io/v2/user/${username}`
+      
+    });
+  }
   getUser(username){
 
-    mascotasApi.getUserByUsername(username)
+    this.getUserByUsername(username)
     .then(response => {
       expect(response.status).to.equal(200);
       
     });
   }
-  retrieveSoldPetNames() {
+  // retrieveSoldPetNames() {
 
-    mascotasApi.getSoldPets()
-    .then(response => {
-      const soldPets = response.body;
-      this.soldPetNames = soldPets.map(pet => ({ id: pet.id, name: pet.name }));
-      cy.log('Nombres de mascotas vendidas:', this.soldPetNames);
-    });
-  }
+  //   mascotasApi.getSoldPets()
+  //   .then(response => {
+  //     const soldPets = response.body;
+  //     this.soldPetNames = soldPets.map(pet => ({ id: pet.id, name: pet.name }));
+  //     cy.log('Nombres de mascotas vendidas:', this.soldPetNames);
+  //   });
+  // }
 
   createPetAnalyzer(petData) {
     return {
