@@ -32,15 +32,6 @@ class Pets {
       
     });
   }
-  // retrieveSoldPetNames() {
-
-  //   mascotasApi.getSoldPets()
-  //   .then(response => {
-  //     const soldPets = response.body;
-  //     this.soldPetNames = soldPets.map(pet => ({ id: pet.id, name: pet.name }));
-  //     cy.log('Nombres de mascotas vendidas:', this.soldPetNames);
-  //   });
-  // }
 
   createPetAnalyzer(petData) {
     return {
