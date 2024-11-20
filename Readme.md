@@ -1,4 +1,4 @@
-## Es un reposito de muestra como se puede trabajar con Cypress.
+## Es un repositorio de muestra como se puede trabajar con Cypress.
 
 1º Clonar Repositorio
 ```
