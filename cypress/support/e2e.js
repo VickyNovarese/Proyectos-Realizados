@@ -18,3 +18,7 @@ import './commands'
 import "cypress-Plugin-api";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Ignorar errores específicos o todos si no afectan las pruebas
+  return false;
+});

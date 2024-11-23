@@ -1,0 +1,38 @@
+{
+
+    "fullName": 
+        {        
+            "fullNameSpaces": "j hon s ierra",
+            "fullName": "John Doe",
+            "fullNamefullOfSpaces": "   "
+        },
+
+    "email":  
+        {
+            "emailWithoutArroba": "examplemail.com",
+            "emailWithoutNothingBeforeArroba": "@mail.com",
+            "emailWithoutNothingAfterArroba": "example@.com",
+            "validEmail": "user@mail.com",
+            "invalidMail": "user!@mail.com",
+            "mailWithoutDotAfterArroba":"examplemail@mailcom",
+            "validMailWithSubdomain":"user@mail.co.uk",
+            "emailWithSpaces": "maria @ mail . com",
+            "emailWithLessThanTwoCharactersBeforeDot":" example@mail.c"
+        },
+
+    "currentAddress":         
+        {
+            "validCurrentAddress":"123 Main St"
+        
+        },
+
+    "permanentAddress": 
+        {
+            "validPermanentAddress": "456 Elm St"
+        }
+    
+    
+    }
+
+
+

@@ -12,7 +12,7 @@
     "javascript"
   ],
   "devDependencies": {
-    "cypress": "^12.14.0"
+    "cypress": "^12.17.4"
   },
   "dependencies": {
     "cypress-plugin-api": "^2.11.1"

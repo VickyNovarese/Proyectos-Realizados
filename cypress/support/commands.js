@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('userLogin',(username,password) => {
+    cy.get('[data-test="username"]').type(username)
+    cy.get('[data-test="password"]').type(password)
+    cy.get('#login-button').click()
+})
+
+Cypress.Commands.add('logout',() => {
+    cy.get('[class="bm-burger-button"]').click()
+    cy.get('#logout_sidebar_link').click()
+  
+})

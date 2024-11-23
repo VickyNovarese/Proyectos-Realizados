@@ -1,9 +1,10 @@
 module.exports = {
-  watchForFileChanges:false,
+  watchForFileChanges: false,
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
-      baseurl:'www.google.com'
+      // Aquí puedes implementar los listeners de eventos si los necesitas
     },
+    baseUrl: 'https://www.google.com', // Asegúrate de usar el prefijo 'https://'
   },
 };
+
