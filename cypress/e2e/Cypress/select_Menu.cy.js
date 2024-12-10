@@ -1,4 +1,4 @@
-	import { Menu } from "../../support/Page/menu_select_Page";
+	import { Menu } from "../../support/Page/select_Menu_Page.js";
 	describe("✅ToolsQA | Widgets | Dropdown - Select Menu", () => {
 	beforeEach(() => {
 		cy.visit("https://demoqa.com/select-menu");
@@ -49,13 +49,14 @@
 	});
 	it("Validar las opciones en el select one", () => {
 		Menu.get.selectOne().click();
-		Menu.get.selectOneOption().then((options) => {
-		expect(options[0]).to.have.text("Dr.");
-		expect(options[1]).to.have.text("Mr.");
-		expect(options[2]).to.have.text("Mrs.");
-		expect(options[3]).to.have.text("Ms.");
-		expect(options[4]).to.have.text("Prof.");
-		expect(options[5]).to.have.text("Other");
+		Menu.get.selectOneOption().then((option)=>{
+		cy.wrap(option[0]).should('have.text','Dr.')
+		cy.wrap(option[1]).should('have.text','Mr.')
+		cy.wrap(option[2]).should('have.text','Mrs.')
+		cy.wrap(option[3]).should('have.text','Ms.')
+		cy.wrap(option[4]).should('have.text','Prof.')
+		cy.wrap(option[5]).should('have.text','Other')
+		
 		});
 	});
 
@@ -73,7 +74,7 @@
 		});
 	});
 
-	it("Validar selecionar las opcion 'Mrs.' en el select one", () => {
+	it("Validar seleccionar las opcion 'Mrs.' en el select one", () => {
 		Menu.get.selectOne().click();
 		Menu.get.selectOneOption().then((option) => {
 		option[2].click();
@@ -105,8 +106,18 @@
 		.should("contain", "No options");
 	});
 	it("Validar seleccionar varias opciones del stantard multiselect", () => {
-		Menu.get.autos().then((select) => {
+		Menu.get.cars().then((select) => {
 		cy.wrap(select).select(["volvo", "opel"]).should("be.visible");
 		});
 	});
+	it("Validar las opciones en el select one", () => {
+		Menu.get.selectOne().click();
+		Menu.get.selectOneOption().should('have.length',6)
+		.and($list =>{
+			expect($list.get(0).textContent, 'first-item').to.equal("Dr.")
+		})
+		
+		});
+	
+
 	});

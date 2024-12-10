@@ -15,7 +15,16 @@ class menu {
         addToCart:()=>cy.get('[class="btn_primary btn_inventory"]').eq(0),
         remove:()=>cy.get('[class="btn_secondary btn_inventory"]').eq(0),   
         shoppingCart:()=> cy.get('[class="fa-layers-counter shopping_cart_badge"]'),
-        acceptCookies:()=>cy.get('#onetrust-accept-btn-handler')
+        acceptCookies:()=>cy.get('#onetrust-accept-btn-handler'),
+        selectOne:()=>cy.get('#selectOne'),
+        selectOneOption:()=>cy.get('[id^="react-select-3-option-0-"]'),
+        oldSelect:()=>cy.get('#oldSelectMenu'),
+        multiselect:()=> cy.get('.css-yk16xz-control'),
+        multiselectOption:()=>cy.get('[id^="react-select-4-option-"]'),
+        optionsSelected:()=>cy.get('.css-2b097c-container'),
+        noMoreOptions:()=>cy.get('.css-1gl4k7y'),
+        cars:()=>cy.get('#cars')
+
     }
 }
 
