@@ -2,6 +2,7 @@ class burgerMenu {
     get={
         menu:()=> cy.get('[class="bm-burger-button"]'),
         allItems:()=>cy.get('#inventory_sidebar_link'),
+        itemsMenu:()=>cy.get('[class="bm-menu-wrap"]'),
         about:()=>cy.get('#about_sidebar_link.bm-item.menu-item'),
         logout:()=>cy.get('#logout_sidebar_link'),
         reset:()=>cy.get('#reset_sidebar_link'),

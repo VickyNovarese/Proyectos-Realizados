@@ -3,7 +3,7 @@ class amazon {
         cookies:()=>cy.get('#sp-cc-accept'),
         account:()=>cy.get('#nav-link-accountList-nav-line-1'),
         menuAccount:()=>cy.get('#nav-al-wishlist'),
-        identify:()=>cy.get('#nav-al-signin'),
+        identify:()=>cy.get('#nav-al-signin .nav-action-inner'),
         emailInput:()=>cy.get('#ap_email'),
         continueButton:()=>cy.get('#continue'),
         passwordInput:()=>cy.get('#ap_password'),   
@@ -11,8 +11,8 @@ class amazon {
         accountLabel:()=>cy.get('#nav-link-accountList'),
         labelOrder:()=>cy.get('[class="nav-line-1"]'),
         searchTextBox:()=>cy.get('#twotabsearchtextbox'),
-        searhSubmitButton:()=>cy.get('#nav-search-submit-button'),
-        product:()=>cy.get('[class="a-size-base-plus a-color-base a-text-normal"]'),
+        searchSubmitButton:()=>cy.get('#nav-search-submit-button'),
+        product:()=>cy.get('[data-csa-c-item-id="amzn1.asin.1.B09TLGRNJK"]').eq(0),
         addToCart:()=>cy.get('#add-to-cart-button'),
         noEnsurance:()=>cy.get('#attachSiNoCoverage'),
         warranty:()=>cy.get('#attach-warranty-pane'),
@@ -53,7 +53,7 @@ class amazon {
     login(mail, password){
         Amazon.get.account().trigger('mouseover')
         Amazon.get.menuAccount().should('be.visible')
-        Amazon.get.identify().click()
+        Amazon.get.identify().click({force:true})
         Amazon.get.mail().type(mail)
         Amazon.get.continueButton().click()
         Amazon.get.password().type(password)

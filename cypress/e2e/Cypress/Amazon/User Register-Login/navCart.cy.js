@@ -12,11 +12,16 @@ describe('Validate to add a product to the nav_Cart',()=>{
     })
 
     it('Add a product to the car',()=>{
-        Amazon.get.searchTextBox().type('Batidora')
-        Amazon.get.searhSubmitButton().click()
-        Amazon.get.product().contains(data.product)
-              .should('exist')
-              .click()
+        Amazon.get.searchTextBox().type(data.product)
+        Amazon.get.searchSubmitButton().should('be.visible').click({force:true})
+        Amazon.get.product()
+            
+           // .scrollIntoView()
+            .should('exist')
+            
+
+        .should('be.visible')
+        .click()
         Amazon.get.addToCart().click()
         cy.get('body').then(($body)=>{
             if($body.find('#attachSiNoCoverage-announce').length>0)

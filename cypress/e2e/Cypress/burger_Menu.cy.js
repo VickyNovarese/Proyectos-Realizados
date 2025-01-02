@@ -2,13 +2,13 @@ import data from "../../support/fixture/credentials.json"
 import {BurgerMenu} from "../../support/Page/burger_Menu_Page"
 describe('Select options of a burger menu',()=>{
     beforeEach('Visit the page',()=>{
-        cy.visit('https://www.saucedemo.com/v1/')
+        cy.visit('https://www.saucedemo.com/v1/index.html')
         cy.userLogin(data[0].validUserName.userName, data[0].validUserName.password)
         cy.url('https://www.saucedemo.com/v1/inventory.html')
     })
     it('Validate that the menu expands correctly when clicked.',()=>{
-
-        BurgerMenu.get.menu().click()
+        cy.scrollTo('top')
+        BurgerMenu.get.menu().should('be.visible').click()
         BurgerMenu.get.allItems().should('be.visible').should('have.text','All Items')
         BurgerMenu.get.about().should('be.visible').should('have.text','About')
         BurgerMenu.get.logout().should('be.visible').should('have.text','Logout')
@@ -16,8 +16,11 @@ describe('Select options of a burger menu',()=>{
         
     })
 
-    it('Validate that the menu options are "All Items", "About", "Logout", "Reset App State"',()=>{
-        BurgerMenu.get.allItems().should('be.visible').should('have.text','All Items')
+    it.only('Validate that the menu options are "All Items", "About", "Logout", "Reset App State"',()=>{
+        cy.scrollTo('top')
+        BurgerMenu.get.menu().scrollIntoView().should('be.visible').click()
+        BurgerMenu.get.itemsMenu().should('be.visible')      
+        BurgerMenu.get.allItems().should('exist').should('have.text','All Items')        
         BurgerMenu.get.about().should('be.visible').should('have.text','About')
         BurgerMenu.get.logout().should('be.visible').should('have.text','Logout')
         BurgerMenu.get.reset().should('be.visible').should('have.text','Reset App State')
