@@ -7,7 +7,7 @@ class Page {
 		AcceptCookiesBottom:()=> cy.get('#L2AGLb')
 	};
 	findPage() {
-		page.get.findText().type('automatización')
+		page.get.findText().should('be.visible').type('automatización')
 		page.get.AcceptBottom().eq(1).click({ force:true });
 		cy.get('h3', { timeout: 10000 }).should('be.visible');
 	}
