@@ -5,7 +5,7 @@ describe('Ejercicio 2: Buscar en Internet una palabra', () => {
 beforeEach(() => {
 cy.viewport(1080,720);
 cy.visit('https://www.google.com');
-page.get.AcceptCookiesBottom().click();
+
 });
  // Caso de prueba 1: Buscar la palabra "automatización"
 it('TC 1: Buscar la palabra automatización', () => {
