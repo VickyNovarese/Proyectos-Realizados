@@ -2,7 +2,7 @@
 class Page {
 	//Define un objeto 'get' que contiene métodos para acceder a elementos de la página
 	get = {
-		findText: () => cy.get('#APjFqb'),
+		findText: () => cy.get('.a4bIc #APjFqb'),
 		AcceptBottom: () => cy.get('[name="btnK"]'),
 		AcceptCookiesBottom:()=> cy.get('#L2AGLb')
 	};
