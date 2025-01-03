@@ -32,10 +32,11 @@ describe('Validate to add a product to the nav_Cart',()=>{
         Amazon.get.cartCountContainer().should('contain','1')
         Amazon.get.cart().click()
         Amazon.get.cartDetail().should('contain',data.product)
-        Amazon.get.checkout().click()
         Amazon.get.cart().click()
         Amazon.get.cartDetail().should('contain',data.product)
         Amazon.get.eliminateItem().click()
+        Amazon.get.cart().click()
+        Amazon.get.cartCountContainer().should('contain','0')
 
         })
     })
